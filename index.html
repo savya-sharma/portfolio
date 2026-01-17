@@ -8,25 +8,29 @@
   <link rel="stylesheet" href="src/style.css">
 </head>
 
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden md:overflow-x-visible">
+  <!-- Samsung Galaxy S20 Ultra -->
 
-  <div class="w-full text-[#262626]">
+  <div class="main w-full text-[#262626]">
     <div class="page1 relative z-10">
 
       <div class="flex flex-col items-start gap-3">
         <nav
-          class="menuBtn z-10 fixed cursor-pointer left-0 top-[45%] -rotate-90 bg-black text-white px-10 py-3 text-[1.3em]">
+          class="menuBtn z-10 fixed cursor-pointer left-0 top-[25%] md:top-[45%] -rotate-90 bg-black text-white px-7 sm:px-10 py-2 sm:py-3 text-[1.05em] sm:text-[1.3em]">
           <h2>Menu</h2>
         </nav>
-        <nav class="menu flex flex-col text-[.85em] text-center gap-2 text-white fixed top-[42%] left-12">
-          <a class="bg-black px-[.4em] py-[.4em]" href="javascript:void(0);"
+        <nav
+          class="menu flex flex-col text-[.82em] sm:text-[.85em] text-center gap-1.5 sm:gap-2 text-white fixed top-[22%] md:top-[42%] left-5 sm:left-12">
+          <a class="bg-black px-[.3em] py-[.3em] sm:px-[.4em] sm:py-[.4em]" href="javascript:void(0);"
             onclick="document.querySelector('.page3').scrollIntoView({ behavior: 'smooth' });">Work</a>
-          <a class="bg-black px-[.4em] py-[.4em]" href="">About</a>
-          <a class="bg-black px-[.4em] py-[.4em]" href="">Play</a>
+          <a class="bg-black px-[.3em] py-[.3em] sm:px-[.4em] sm:py-[.4em]" href="">About</a>
+          <a class="bg-black px-[.3em] py-[.3em] sm:px-[.4em] sm:py-[.4em]" href="">Play</a>
         </nav>
       </div>
 
-      <nav class="bar fixed z-10 md:flex flex-col justify-between items-center top-0 left-0 w-full py-4 px-6 sm:px-13">
+
+
+      <nav class="bar fixed z-10 md:flex  justify-between items-center top-0 left-0 w-full py-4 px-6 sm:px-13">
         <h3 class="text-[1.5em] sm:text-[1.4em]">savya.studio</h3>
         <div class="flex text-[.98em] sm:text-[1.1em] items-center gap-3 sm:gap-5">
           <div class="time text-[#F45E2B]"></div>
@@ -37,11 +41,13 @@
           </div>
         </div>
       </nav>
+
       <div class="landing h-[200vh] sm:h-[200vh] xs:h-[200vh] flex flex-col justify-between">
         <!-- Canvas and header content in a sticky container -->
         <div class="w-full h-screen sticky -z-1 top-0 left-0 flex items-center justify-center">
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-[95vw] max-w-[1100px] px-2 sm:px-0 pointer-events-none">
-            <h1 class="heading whitespace-nowrap text-[2.2em] sm:text-[5em] md:text-[8em] leading-[1.1em] font-bold">
+          <div
+            class="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-[95vw] max-w-[1100px] px-2 sm:px-0 pointer-events-none">
+            <h1 class="heading whitespace-nowrap text-[4em] sm:text-[5em] md:text-[8em] leading-[1.1em] font-bold">
               Making. Ideas. <br> Work.
               <span class="text-[#F45E2B]">
                 Beautiful
@@ -54,17 +60,16 @@
           </div>
           <!-- Responsive Canvas, always fills and is behind text -->
           <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
-            <canvas
-              class="pointer-events-none w-full h-full block"
-              id="canvas"
-              style="display:block; width:100vw; height:100vh; max-width:100%; max-height:100%; margin:0; padding:0;"
-            ></canvas>
+            <canvas class="pointer-events-none w-full h-full block" id="canvas"
+              style="display:block; width:100vw; height:100vh; max-width:100%; max-height:100%; margin:0; padding:0;"></canvas>
           </div>
         </div>
         <!-- Paragraph always visible at bottom on both mobile and desktop -->
-        <div class="w-full flex justify-center items-center px-4 pb-8 mt-auto">
-          <p class="text-[1em] sm:text-[1.3em] md:text-[1.9em] para opacity-0 pointer-events-none text-center tracking-tight max-w-[950px]"
-            style="mix-blend-mode: difference;">
+        <!-- On laptop and larger screens, paragraph overlays the object (canvas); on mobile, stays at the bottom as before -->
+        <div
+          class="w-full flex justify-center items-center px-4 pb-8 md:pb-0 md:absolute md:bottom-16 md:left-1/2 md:-translate-x-1/2 md:z-20 md:w-auto md:max-w-[950px] md:pointer-events-none">
+          <p
+            class="text-[1em] sm:text-[1.3em] md:text-[1.9em] para opacity-0 pointer-events-auto text-center tracking-tight max-w-[950px] md:px-8 md:py-6">
             Creative development is the process of turning ideas into real designs or experiences. It blends
             imagination
             with
@@ -76,57 +81,69 @@
     </div>
 
 
+
+
     <!-- Short About -->
-    <div class="page2 relative w-full min-h-screen pt-24 bg-blue-700">
-      <div class="flex flex-col gap-24 items-center justify-center text-white">
-        <div class="w-[9vw] absolute top-10 left-[25%]">
-          <img class="object-cover" src="../public/images/arrow4.png" alt="">
+    <div class="page2 relative w-full min-h-[72vh] sm:min-h-screen pt-24 bg-blue-700">
+      <div class="flex flex-col gap-16 sm:gap-24 items-center justify-center text-white relative px-4 sm:px-0">
+        <div
+          class="w-[22vw] sm:w-[9vw] absolute top-1 sm:top-10 left-1/2 sm:left-[25%] -translate-x-1/2 sm:translate-x-0">
+          <img class="object-cover w-full" src="../public/images/arrow4.png" alt="">
         </div>
-        <div class="absolute top-10 left-42">
-          <h2 class="bg-white px-8 py-4 text-blue-700 leading-none text-[2em]">Don't you know <br>to about me</h2>
+        <div class="absolute -top-2 sm:top-10 left-1/2 sm:left-42 -translate-x-1/2 sm:translate-x-0">
+          <h2
+            class="bg-white px-4 sm:px-8 py-2 sm:py-4 text-blue-700 leading-none text-[1.1em] sm:text-[2em] text-center">
+            Don't you know <br>to about me
+          </h2>
         </div>
-        <div class="flex justify-center pt-34">
-          <div class="w-[58%]">
-            <h1 class="text-5xl text-center">I'm
-              <span class="font-[italic]">
-                Savya,
-              </span>
-              a Creative Developer who loves turning visual ideas into doop
-              things, human experiences. I'm
+        <div class="flex justify-center pt-20 sm:pt-34 w-full">
+          <div class="w-full sm:w-[58%] px-1">
+            <h1 class="text-2xl sm:text-5xl text-center leading-snug">
+              I'm
+              <span class="font-[italic]">Savya,</span>
+              a Creative Developer who loves turning visual ideas into doop things, human experiences. I'm
               curries by how good design inhance our brand focus on what truly matters, without ever getting in the way.
             </h1>
           </div>
         </div>
-        <div class="text-[1.4em]">
+        <div class="text-[1.1em] sm:text-[1.4em] mt-6 sm:mt-0">
           <a href="#">ABOUT</a>
         </div>
       </div>
     </div>
 
 
+
+
+
+
+
     <!-- Projects -->
-    <div class="page3 relative w-full min-h-screen pt-32 px-24">
-      <div class="py-18">
-        <div class="w-[8vw] absolute top-35 left-[24%]">
-          <img src="../public/images/arrow3.png" alt="">
+    <div class="page3 relative w-full min-h-screen pt-32 px-4 md:px-24">
+      <div class="py-18 relative">
+        <div
+          class="w-[20vw] sm:w-[8vw] absolute top-7 sm:top-12 left-1/2 sm:left-[24%] -translate-x-1/2 sm:translate-x-0">
+          <img class="w-full" src="../public/images/arrow3.png" alt="">
         </div>
-        <div class="absolute top-34 left-[10%]">
-          <h1 class="bg-[#262626] p-8 text-white text-[2em]">Recent <span class="text-[#F45E2B]">
+        <div class="absolute -top-7 sm:top-4 left-1/2 sm:left-[10%] -translate-x-1/2 sm:translate-x-0">
+          <h1 class="bg-[#262626] px-17 py-2 sm:p-8 text-white text-[1.4em] sm:text-[2em] text-center">
+            Recent <span class="text-[#F45E2B]">
               Projects
             </span>
           </h1>
         </div>
-        <h1 class="font-[italic] text-center text-[14em]">Projects</h1>
+        <h1 class="font-[italic] text-center text-[6em] sm:text-[14em]">Projects</h1>
       </div>
       <div class="projects font-[light] flex flex-col gap-32">
-        <div class="flex gap-14">
-          <div class="project w-[35vw] h-[45vh] bg-black">
-            <img src="../public/images/projectImg1.jpg" alt="">
+
+        <div class="flex flex-col sm:flex-row gap-10 sm:gap-14">
+          <div class="project w-full sm:w-[35vw] h-[40vh] sm:h-[45vh] bg-black flex-shrink-0">
+            <img class="object-cover w-full h-full" src="../public/images/projectImg1.jpg" alt="">
           </div>
-          <div class="project_content w-[40vw] flex flex-col gap-2">
-            <h3 class="text-[1.2em] opacity-[.8]">2024</h3>
-            <h2 class="text-[2em]">Sajno.co</h2>
-            <div class="text-[1.2em] opacity-[.8] flex flex-col gap-5 pt-7">
+          <div class="project_content w-full sm:w-[40vw] flex flex-col gap-2 mt-6 sm:mt-0">
+            <h3 class="text-[1.1em] sm:text-[1.2em] opacity-[.8]">2024</h3>
+            <h2 class="text-[1.3em] sm:text-[2em]">Sajno.co</h2>
+            <div class="text-[1em] sm:text-[1.2em] opacity-[.8] flex flex-col gap-4 sm:gap-5 pt-5 sm:pt-7">
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eos voluptatum praesentium beatae
                 aperiam
                 hic, nulla similique ipsa nostrum voluptatibus totam repellendus ut magnam tenetur incidunt, dolore,
@@ -137,51 +154,56 @@
           </div>
         </div>
 
-        <div class="flex gap-14">
-          <div class="project w-[35vw] h-[45vh] bg-black">
-            <img src="../public/images/projectImg2.jpg" alt="">
+        <div class="flex flex-col sm:flex-row gap-10 sm:gap-14">
+          <div class="project w-full sm:w-[35vw] h-[40vh] sm:h-[45vh] bg-black flex-shrink-0">
+            <img class="object-cover w-full h-full" src="../public/images/projectImg2.jpg" alt="">
           </div>
-          <div class="project_content w-[40vw] flex flex-col gap-2">
-            <h3 class="text-[1.2em] opacity-[.8]">2024</h3>
-            <h2 class="text-[2em]">Sajno.co</h2>
-            <div class="text-[1.2em] opacity-[.8] pt-7">
+          <div class="project_content w-full sm:w-[40vw] flex flex-col gap-2 mt-6 sm:mt-0">
+            <h3 class="text-[1.1em] sm:text-[1.2em] opacity-[.8]">2024</h3>
+            <h2 class="text-[1.3em] sm:text-[2em]">Sajno.co</h2>
+            <div class="text-[1em] sm:text-[1.2em] opacity-[.8] flex flex-col gap-4 sm:gap-5 pt-5 sm:pt-7">
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eos voluptatum praesentium beatae
                 aperiam
                 hic, nulla similique ipsa nostrum voluptatibus totam repellendus ut magnam tenetur incidunt, dolore,
                 eveniet facere aspernatur.</p>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eveniet accusamus error.</p>
             </div>
           </div>
         </div>
 
-
-        <div class="flex gap-14">
-          <div class="project w-[35vw] h-[45vh] bg-black">
-            <img src="../public/images/projectImg3.jpg" alt="">
+        <div class="flex flex-col sm:flex-row gap-10 sm:gap-14">
+          <div class="project w-full sm:w-[35vw] h-[40vh] sm:h-[45vh] bg-black flex-shrink-0">
+            <img class="object-cover w-full h-full" src="../public/images/projectImg3.jpg" alt="">
           </div>
-          <div class="project_content w-[40vw] flex flex-col gap-2">
-            <h3 class="text-[1.2em] opacity-[.8]">2024</h3>
-            <h2 class="text-[2em]">Sajno.co</h2>
-            <div class="text-[1.2em] opacity-[.8] pt-7">
+          <div class="project_content w-full sm:w-[40vw] flex flex-col gap-2 mt-6 sm:mt-0">
+            <h3 class="text-[1.1em] sm:text-[1.2em] opacity-[.8]">2024</h3>
+            <h2 class="text-[1.3em] sm:text-[2em]">Sajno.co</h2>
+            <div class="text-[1em] sm:text-[1.2em] opacity-[.8] flex flex-col gap-4 sm:gap-5 pt-5 sm:pt-7">
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eos voluptatum praesentium beatae
                 aperiam
                 hic, nulla similique ipsa nostrum voluptatibus totam repellendus ut magnam tenetur incidunt, dolore,
                 eveniet facere aspernatur.</p>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eveniet accusamus error.</p>
             </div>
           </div>
         </div>
 
-        <div class="flex gap-14">
-          <div class="project w-[35vw] h-[45vh] bg-black">
-            <img src="../public/images/projectImg4.jpg" alt="">
+        <div class="flex flex-col sm:flex-row gap-10 sm:gap-14">
+          <div class="project w-full sm:w-[35vw] h-[40vh] sm:h-[45vh] bg-black flex-shrink-0">
+            <img class="object-cover w-full h-full" src="../public/images/projectImg4.jpg" alt="">
           </div>
-          <div class="project_content w-[40vw] flex flex-col gap-2">
-            <h3 class="text-[1.2em] opacity-[.8]">2024</h3>
-            <h2 class="text-[2em]">Sajno.co</h2>
-            <div class="text-[1.2em] opacity-[.8] pt-7">
+          <div class="project_content w-full sm:w-[40vw] flex flex-col gap-2 mt-6 sm:mt-0">
+            <h3 class="text-[1.1em] sm:text-[1.2em] opacity-[.8]">2024</h3>
+            <h2 class="text-[1.3em] sm:text-[2em]">Sajno.co</h2>
+            <div class="text-[1em] sm:text-[1.2em] opacity-[.8] flex flex-col gap-4 sm:gap-5 pt-5 sm:pt-7">
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eos voluptatum praesentium beatae
                 aperiam
                 hic, nulla similique ipsa nostrum voluptatibus totam repellendus ut magnam tenetur incidunt, dolore,
                 eveniet facere aspernatur.</p>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eveniet accusamus error.</p>
             </div>
           </div>
         </div>
@@ -190,11 +212,16 @@
     </div>
 
 
+
+
+
     <!-- Testimonial -->
     <div class="page4 px-[5vw] pt-41">
-      <div class="p4-container w-full min-h-screen text-white pt-24 mt-38">
+      <div class="p4-container min-h-[72vh] sm:min-h-screen text-white pt-24 mt-38">
         <div class="pt-10">
-          <h1 class="text-[9em] text-center leading-none">Apparently, this is <br> how I <span class="text-[#F45E2B]">
+          <h1 class="text-center leading-none text-[3em] xs:text-[4em] sm:text-[7em] md:text-[9em]">
+            Apparently, this is <br> how I
+            <span class="text-[#F45E2B]">
               work!
             </span>
           </h1>
@@ -202,14 +229,19 @@
 
         <!-- Endorsement -->
         <div class="text-[1.5em] font-[light] flex justify-center pt-38">
-          <div class="flex flex-col gap-20">
-            <h2 class="w-[35vw] leading-[1.2em]">Savya has a strong ability to translate abstract ideas into clean,
+          <div class="flex flex-col gap-16 sm:gap-20">
+            <h2
+              class="w-[95vw] max-w-[550px] sm:w-[35vw] leading-[1.2em] text-[.9em] sm:text-[1.25em] text-center sm:text-left">
+              Savya has a strong ability to translate abstract ideas into clean,
               engaging frontend
               experiences. With a structured approach to code and a keen eye for design, Savya consistently delivers
               responsive interfaces enhanced by smooth animations and thoughtful interactions. Their work reflects a
-              balance of creativity, performance, and technical clarity.</h2>
-
-            <h2 class="text-[.9em] italic opacity-[.9]">Tech Trainer | superreply <br> Rohit Jain</h2>
+              balance of creativity, performance, and technical clarity.
+            </h2>
+            <h2 class="text-[.8em] sm:text-[.9em] italic opacity-[.9] text-center sm:text-left">
+              Tech Trainer&nbsp;|&nbsp;superreply <br>
+              Rohit Jain
+            </h2>
           </div>
         </div>
       </div>
@@ -217,66 +249,88 @@
     <!-- other Testimonial -->
     <div class="p4-container w-full min-h-screen text-white">
       <div class="text-[1.5em] font-[light] flex justify-center pt-38">
-        <div class="flex flex-col gap-20">
-          <h2 class="w-[35vw] leading-[1.2em]">Savya has a strong ability to translate abstract ideas into clean,
+        <div class="flex flex-col gap-16 sm:gap-20">
+          <h2
+            class="w-[95vw] max-w-[550px] sm:w-[35vw] leading-[1.2em] text-[.9em] sm:text-[1.25em] text-center sm:text-left">
+            Savya has a strong ability to translate abstract ideas into clean,
             engaging frontend
             experiences. With a structured approach to code and a keen eye for design, Savya consistently delivers
             responsive interfaces enhanced by smooth animations and thoughtful interactions. Their work reflects a
-            balance of creativity, performance, and technical clarity.</h2>
-
-          <h2 class="text-[.9em] italic opacity-[.9]">Tech Trainer | superreply <br> Rohit Jain</h2>
+            balance of creativity, performance, and technical clarity.
+          </h2>
+          <h2 class="text-[.8em] sm:text-[.9em] italic opacity-[.9] text-center sm:text-left">
+            Tech Trainer&nbsp;|&nbsp;superreply <br>
+            Rohit Jain
+          </h2>
         </div>
       </div>
 
       <div class="text-[1.5em] font-[light] flex justify-center pt-38">
-        <div class="flex flex-col gap-20">
-          <h2 class="w-[35vw] leading-[1.2em]">Savya has a strong ability to translate abstract ideas into clean,
+        <div class="flex flex-col gap-16 sm:gap-20">
+          <h2
+            class="w-[95vw] max-w-[550px] sm:w-[35vw] leading-[1.2em] text-[.9em] sm:text-[1.25em] text-center sm:text-left">
+            Savya has a strong ability to translate abstract ideas into clean,
             engaging frontend
             experiences. With a structured approach to code and a keen eye for design, Savya consistently delivers
             responsive interfaces enhanced by smooth animations and thoughtful interactions. Their work reflects a
-            balance of creativity, performance, and technical clarity.</h2>
-          <h2 class="text-[.9em] italic opacity-[.9]">Tech Trainer | superreply <br> Rohit Jain</h2>
+            balance of creativity, performance, and technical clarity.
+          </h2>
+          <h2 class="text-[.8em] sm:text-[.9em] italic opacity-[.9] text-center sm:text-left">
+            Tech Trainer&nbsp;|&nbsp;superreply <br>
+            Rohit Jain
+          </h2>
         </div>
       </div>
     </div>
 
 
-    <div class="page5 relative w-full font-[light] min-h-screen  pt-38 text-white px-24">
-      <div class="flex justify-between items-center">
-        <h3 class="text-[1.1em]">These are the technologies and areas I'm actively <br> exploring and building creative
-          interactions and <br> formated frontend experiences.</h3>
-        <div class="absolute w-[10vw] top-58 right-[23%]">
-          <img src="../public/images/arrow5.png" alt="">
+
+
+
+    <div class="page5 relative w-full font-[light] min-h-screen  pt-38 text-white px-4 md:px-24">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-0 relative">
+        <h3 class="text-[1em] text-center sm:text-left mb-8 sm:mb-0">
+          These are the technologies and areas I'm actively <br class="hidden sm:inline"> exploring and building
+          creative
+          interactions and <br class="hidden sm:inline"> formated frontend experiences.
+        </h3>
+        <div class="block sm:block absolute md:w-[10vw] w-[16vw] top-41 right-12  md:top-16 md:right-[18%]">
+          <img src="../public/images/arrow5.png" alt="" class="w-full">
         </div>
-        <div class="font-[italic] leading-none text-[5em]">
-          <h2>What i <br> work with</h2>
+        <div
+          class="font-[italic] leading-none text-[3em] md:text-[3.5em] sm:text-[4em] md:text-[5em] text-center sm:text-right">
+          <h2 class="">What i <br class="hidden sm:inline"> work with</h2>
         </div>
       </div>
 
       <div class="abilities-section pt-12">
-        <div class="border-b border-white/60 py-13 flex justify-between items-center">
-          <h2 class="text-[3em] font-[regular]">Three.js</h2>
-          <p>interactive 3D secnes, <br> scroll & input-driven motion</p>
+        <div
+          class="border-b border-white/60 py-8 sm:py-13 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-0">
+          <h2 class="text-[2em] sm:text-[2.5em] md:text-[3em] font-[regular] text-center sm:text-left">Three.js</h2>
+          <p class="text-[1em] sm:text-[1.1em] text-center sm:text-right">interactive 3D scenes,<br
+              class="inline sm:hidden"> <span class="hidden sm:inline">scroll &amp;</span> input-driven motion</p>
         </div>
-        <div class="border-b border-white/60 py-13 flex justify-between items-center">
-          <h2 class="text-[3em] font-[regular]">GLSL Shaders</h2>
-          <p>custom visual effects, <br> GPU-based experiments</p>
+        <div
+          class="border-b border-white/60 py-8 sm:py-13 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-0">
+          <h2 class="text-[2em] sm:text-[2.5em] md:text-[3em] font-[regular] text-center sm:text-left">GLSL Shaders</h2>
+          <p class="text-[1em] sm:text-[1.1em] text-center sm:text-right">custom visual effects,<br
+              class="inline sm:hidden"> <span class="hidden sm:inline">GPU-based</span> experiments</p>
         </div>
-        <div class="py-13 flex justify-between items-center">
-          <h2 class="text-[3em] font-[regular]">React</h2>
-          <p>component architecture, <br> state-driven UI, performance</p>
+        <div class="py-8 sm:py-13 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-0">
+          <h2 class="text-[2em] sm:text-[2.5em] md:text-[3em] font-[regular] text-center sm:text-left">React</h2>
+          <p class="text-[1em] sm:text-[1.1em] text-center sm:text-right">component architecture,<br
+              class="inline sm:hidden"> <span class="hidden sm:inline">state-driven UI, performance</span></p>
         </div>
 
 
         <div class="resume flex justify-center items-center pt-10">
           <a href="https://drive.google.com/file/d/1My02ijYxA1Qj8RxUsRrjZpyCXTp1BCSo/view?usp=drive_link"
-            class="border-none flex items-center gap-5 bg-[#F45E2B] text-[1.5em] py-5 px-9">
-            View Resume
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="30px" height="30px" viewBox="0 0 24 24"
-              strokeWidth={1.5} stroke="currentColor" className="size-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            class="border-none flex items-center gap-3 sm:gap-5 bg-[#F45E2B] text-[1.15em] xs:text-[1.3em] sm:text-[1.5em] py-4 sm:py-5 px-5 sm:px-9 shadow-md transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#F45E2B] active:scale-97">
+            <span class="text-sm sm:text-base">View Resume</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="26" height="26" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" class="w-6 h-6 sm:w-7 sm:h-7">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
             </svg>
-
           </a>
         </div>
       </div>
@@ -284,31 +338,37 @@
 
 
 
-    <div class="page6 flex flex-col justify-end  pb-32 text-white text-center w-full min-h-screen bg-black">
-      <div class="flex flex-col items-center justify-between gap-38 pt-[20vw]">
-        <p class="font-[light] opacity-[.6] text-[1.1em]">I’m a solo frontend developer building interactive, <br>
-          creative
-          experiences. Let’s
-          collaborate on your next
-          project.</p>
 
-        <div class="">
-          <h2 class="text-[10em] leading-none">
+
+
+
+
+    <div
+      class="page6 flex flex-col justify-end pb-13 text-white text-center w-full min-h-[72vh] sm:min-h-screen bg-black">
+      <div
+        class="flex flex-col items-center justify-between gap-24 sm:gap-38 pt-16 sm:pt-[10vw] md:pt-[7vw] w-full px-4">
+        <p class="font-[light] opacity-[.6] text-[1em] sm:text-[1.1em] leading-tight text-center">
+          I’m a solo frontend developer building interactive,<br class="hidden md:inline"> creative experiences.<br
+            class="block sm:hidden"> Let’s collaborate on your next project.
+        </p>
+
+        <div class="w-full flex flex-col items-center">
+          <h2 class="text-[3em] md:text-[4em] sm:text-[7em] md:text-[10em] leading-none text-center break-words">
             Open for collaboration.
           </h2>
 
-          <div class="text-[1.2em] font-[light] flex justify-center gap-8">
-            <a href="#">Email</a>
-            <a href="#">LinkedIn</a>
-            <a class="text-[#F45E2B]" href="#">1.Savya</a>
+          <div
+            class="text-[1em] md:text-[1.1em] sm:text-[1.2em] font-[light] flex flex-col md:flex-row justify-center items-center gap-4 xs:gap-8 mt-6">
+            <a href="#" class="hover:underline">Email</a>
+            <a href="#" class="hover:underline">LinkedIn</a>
+            <a class="text-[#F45E2B] hover:underline" href="#">1.Savya</a>
           </div>
         </div>
-
-
       </div>
     </div>
-  </div>
 
+
+  </div>
   <script type="module" src="src/main.js"></script>
 </body>
 
