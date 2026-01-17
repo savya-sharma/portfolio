@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body class="overflow-x-hidden">
+
+  <div class="w-full text-[#262626]">
+    <div class="page1 relative z-10">
+
+      <div class="flex flex-col items-start gap-3">
+        <nav
+          class="menuBtn z-10 fixed cursor-pointer left-0 top-[45%] -rotate-90 bg-black text-white px-10 py-3 text-[1.3em]">
+          <h2>Menu</h2>
+        </nav>
+        <nav class="menu flex flex-col text-[.85em] text-center gap-2 text-white fixed top-[42%] left-12">
+          <a class="bg-black px-[.4em] py-[.4em]" href="javascript:void(0);"
+            onclick="document.querySelector('.page3').scrollIntoView({ behavior: 'smooth' });">Work</a>
+          <a class="bg-black px-[.4em] py-[.4em]" href="">About</a>
+          <a class="bg-black px-[.4em] py-[.4em]" href="">Play</a>
+        </nav>
+      </div>
+
+      <nav class="bar fixed z-10 flex justify-between top-0 left-0 w-full py-4 px-13
+        max-[640px]:flex-col max-[640px]:gap-2 max-[640px]:px-4 max-[640px]:py-3 max-[640px]:items-start">
+        <h3 class="text-[1.4em] max-[640px]:text-[1em]">savya.studio</h3>
+        <div class="flex text-[1.1em] items-center gap-5 max-[640px]:text-[.95em] max-[640px]:gap-2">
+          <div class="time text-[#F45E2B]"></div>
+          <div class="flex items-center gap-2">
+            <span class="block w-[.6em] h-[.6em] bg-[#F45E2B] rounded-full"></span>
+            <span class="max-[640px]:text-sm">Open to work</span>
+          </div>
+        </div>
+      </nav>
+
+      <div class="landing h-[200vh] max-[640px]:h-[160vh]">
+        <div class="w-full h-screen sticky -z-1 top-0 left-0 max-[640px]:h-[70vh]">
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full px-3 max-[640px]:px-1 max-[640px]:top-[55%] max-[640px]:-translate-y-1/2">
+            <h1
+              class="heading whitespace-nowrap text-[8em] leading-[1.1em] font-bold max-[640px]:whitespace-normal max-[640px]:text-[2.2em] max-[640px]:leading-snug">
+              Making. Ideas. <br class="max-[640px]:hidden" /> Work.
+              <span class="text-[#F45E2B]">
+                Beautiful
+              </span>
+            </h1>
+            <h5 class="text-[1.5em] font-[light] max-[640px]:text-[1em] max-[640px]:mt-2">
+              It is time to articulate what frontend development <br class="max-[640px]:hidden" /> truly
+              encompasses.
+            </h5>
+            <p class="text-[1.9em] para opacity-0 pointer-events-none text-center tracking-tight max-[640px]:text-[1.05em] max-[640px]:mt-3"
+              style="mix-blend-mode: difference;">
+              Creative development is the process of turning ideas into real designs or experiences. It blends
+              imagination with
+              problem-solving, testing, and refinement to shape concepts into something meaningful, functional, and
+              visually appealing— so people can easily understand, connect with, and use the final outcome.
+            </p>
+          </div>
+          <canvas class="pointer-events-non" id="canvas"></canvas>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Short About -->
+    <div class="page2 relative w-full min-h-screen pt-24 bg-blue-700">
+      <div class="flex flex-col gap-24 items-center justify-center text-white">
+        <div class="w-[9vw] absolute top-10 left-[25%]">
+          <img class="object-cover" src="../public/images/arrow4.png" alt="">
+        </div>
+        <div class="absolute top-10 left-42">
+          <h2 class="bg-white px-8 py-4 text-blue-700 leading-none text-[2em]">Don't you know <br>to about me</h2>
+        </div>
+        <div class="flex justify-center pt-34">
+          <div class="w-[58%]">
+            <h1 class="text-5xl text-center">I'm
+              <span class="font-[italic]">
+                Savya,
+              </span>
+              a Creative Developer who loves turning visual ideas into doop
+              things, human experiences. I'm
+              curries by how good design inhance our brand focus on what truly matters, without ever getting in the way.
+            </h1>
+          </div>
+        </div>
+        <div class="text-[1.4em]">
+          <a href="#">ABOUT</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Projects -->
+    <div class="page3 relative w-full min-h-screen pt-32 px-24">
+      <div class="py-18">
+        <div class="w-[8vw] absolute top-35 left-[24%]">
+          <img src="../public/images/arrow3.png" alt="">
+        </div>
+        <div class="absolute top-34 left-[10%]">
+          <h1 class="bg-[#262626] p-8 text-white text-[2em]">Recent <span class="text-[#F45E2B]">
+              Projects
+            </span>
+          </h1>
+        </div>
+        <h1 class="font-[italic] text-center text-[14em]">Projects</h1>
+      </div>
+      <div class="projects font-[light] flex flex-col gap-32">
+        <div class="flex gap-14">
+          <div class="project w-[35vw] h-[45vh] bg-black">
+            <img src="../public/images/projectImg1.jpg" alt="">
+          </div>
+          <div class="project_content w-[40vw] flex flex-col gap-2">
+            <h3 class="text-[1.2em] opacity-[.8]">2024</h3>
+            <h2 class="text-[2em]">Sajno.co</h2>
+            <div class="text-[1.2em] opacity-[.8] flex flex-col gap-5 pt-7">
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eos voluptatum praesentium beatae
+                aperiam
+                hic, nulla similique ipsa nostrum voluptatibus totam repellendus ut magnam tenetur incidunt, dolore,
+                eveniet facere aspernatur.</p>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eveniet accusamus error.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-14">
+          <div class="project w-[35vw] h-[45vh] bg-black">
+            <img src="../public/images/projectImg2.jpg" alt="">
+          </div>
+          <div class="project_content w-[40vw] flex flex-col gap-2">
+            <h3 class="text-[1.2em] opacity-[.8]">2024</h3>
+            <h2 class="text-[2em]">Sajno.co</h2>
+            <div class="text-[1.2em] opacity-[.8] pt-7">
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eos voluptatum praesentium beatae
+                aperiam
+                hic, nulla similique ipsa nostrum voluptatibus totam repellendus ut magnam tenetur incidunt, dolore,
+                eveniet facere aspernatur.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="flex gap-14">
+          <div class="project w-[35vw] h-[45vh] bg-black">
+            <img src="../public/images/projectImg3.jpg" alt="">
+          </div>
+          <div class="project_content w-[40vw] flex flex-col gap-2">
+            <h3 class="text-[1.2em] opacity-[.8]">2024</h3>
+            <h2 class="text-[2em]">Sajno.co</h2>
+            <div class="text-[1.2em] opacity-[.8] pt-7">
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eos voluptatum praesentium beatae
+                aperiam
+                hic, nulla similique ipsa nostrum voluptatibus totam repellendus ut magnam tenetur incidunt, dolore,
+                eveniet facere aspernatur.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-14">
+          <div class="project w-[35vw] h-[45vh] bg-black">
+            <img src="../public/images/projectImg4.jpg" alt="">
+          </div>
+          <div class="project_content w-[40vw] flex flex-col gap-2">
+            <h3 class="text-[1.2em] opacity-[.8]">2024</h3>
+            <h2 class="text-[2em]">Sajno.co</h2>
+            <div class="text-[1.2em] opacity-[.8] pt-7">
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eos voluptatum praesentium beatae
+                aperiam
+                hic, nulla similique ipsa nostrum voluptatibus totam repellendus ut magnam tenetur incidunt, dolore,
+                eveniet facere aspernatur.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Testimonial -->
+    <div class="page4 px-[5vw] pt-41">
+      <div class="p4-container w-full min-h-screen text-white pt-24 mt-38">
+        <div class="pt-10">
+          <h1 class="text-[9em] text-center leading-none">Apparently, this is <br> how I <span class="text-[#F45E2B]">
+              work!
+            </span>
+          </h1>
+        </div>
+
+        <!-- Endorsement -->
+        <div class="text-[1.5em] font-[light] flex justify-center pt-38">
+          <div class="flex flex-col gap-20">
+            <h2 class="w-[35vw] leading-[1.2em]">Savya has a strong ability to translate abstract ideas into clean,
+              engaging frontend
+              experiences. With a structured approach to code and a keen eye for design, Savya consistently delivers
+              responsive interfaces enhanced by smooth animations and thoughtful interactions. Their work reflects a
+              balance of creativity, performance, and technical clarity.</h2>
+
+            <h2 class="text-[.9em] italic opacity-[.9]">Tech Trainer | superreply <br> Rohit Jain</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- other Testimonial -->
+    <div class="p4-container w-full min-h-screen text-white">
+      <div class="text-[1.5em] font-[light] flex justify-center pt-38">
+        <div class="flex flex-col gap-20">
+          <h2 class="w-[35vw] leading-[1.2em]">Savya has a strong ability to translate abstract ideas into clean,
+            engaging frontend
+            experiences. With a structured approach to code and a keen eye for design, Savya consistently delivers
+            responsive interfaces enhanced by smooth animations and thoughtful interactions. Their work reflects a
+            balance of creativity, performance, and technical clarity.</h2>
+
+          <h2 class="text-[.9em] italic opacity-[.9]">Tech Trainer | superreply <br> Rohit Jain</h2>
+        </div>
+      </div>
+
+      <div class="text-[1.5em] font-[light] flex justify-center pt-38">
+        <div class="flex flex-col gap-20">
+          <h2 class="w-[35vw] leading-[1.2em]">Savya has a strong ability to translate abstract ideas into clean,
+            engaging frontend
+            experiences. With a structured approach to code and a keen eye for design, Savya consistently delivers
+            responsive interfaces enhanced by smooth animations and thoughtful interactions. Their work reflects a
+            balance of creativity, performance, and technical clarity.</h2>
+          <h2 class="text-[.9em] italic opacity-[.9]">Tech Trainer | superreply <br> Rohit Jain</h2>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="page5 relative w-full font-[light] min-h-screen  pt-38 text-white px-24">
+      <div class="flex justify-between items-center">
+        <h3 class="text-[1.1em]">These are the technologies and areas I'm actively <br> exploring and building creative
+          interactions and <br> formated frontend experiences.</h3>
+        <div class="absolute w-[10vw] top-58 right-[23%]">
+          <img src="../public/images/arrow5.png" alt="">
+        </div>
+        <div class="font-[italic] leading-none text-[5em]">
+          <h2>What i <br> work with</h2>
+        </div>
+      </div>
+
+      <div class="abilities-section pt-12">
+        <div class="border-b border-white/60 py-13 flex justify-between items-center">
+          <h2 class="text-[3em] font-[regular]">Three.js</h2>
+          <p>interactive 3D secnes, <br> scroll & input-driven motion</p>
+        </div>
+        <div class="border-b border-white/60 py-13 flex justify-between items-center">
+          <h2 class="text-[3em] font-[regular]">GLSL Shaders</h2>
+          <p>custom visual effects, <br> GPU-based experiments</p>
+        </div>
+        <div class="py-13 flex justify-between items-center">
+          <h2 class="text-[3em] font-[regular]">React</h2>
+          <p>component architecture, <br> state-driven UI, performance</p>
+        </div>
+
+
+        <div class="resume flex justify-center items-center pt-10">
+          <a href="https://drive.google.com/file/d/1My02ijYxA1Qj8RxUsRrjZpyCXTp1BCSo/view?usp=drive_link"
+            class="border-none flex items-center gap-5 bg-[#F45E2B] text-[1.5em] py-5 px-9">
+            View Resume
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="30px" height="30px" viewBox="0 0 24 24"
+              strokeWidth={1.5} stroke="currentColor" className="size-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="page6 flex flex-col justify-end  pb-32 text-white text-center w-full min-h-screen bg-black">
+      <div class="flex flex-col items-center justify-between gap-38 pt-[20vw]">
+        <p class="font-[light] opacity-[.6] text-[1.1em]">I’m a solo frontend developer building interactive, <br>
+          creative
+          experiences. Let’s
+          collaborate on your next
+          project.</p>
+
+        <div class="">
+          <h2 class="text-[10em] leading-none">
+            Open for collaboration.
+          </h2>
+
+          <div class="text-[1.2em] font-[light] flex justify-center gap-8">
+            <a href="#">Email</a>
+            <a href="#">LinkedIn</a>
+            <a class="text-[#F45E2B]" href="#">1.Savya</a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+
+</html>
