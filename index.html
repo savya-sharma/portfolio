@@ -26,36 +26,51 @@
         </nav>
       </div>
 
-      <nav class="bar fixed  z-10 flex justify-between top-0 left-0 w-full py-4 px-13"> 
-        <h3 class="text-[1.4em]">savya.studio</h3>
-        <div class="flex text-[1.1em] items-center gap-5">
+      <nav class="bar fixed z-10 md:flex flex-col justify-between items-center top-0 left-0 w-full py-4 px-6 sm:px-13">
+        <h3 class="text-[1.5em] sm:text-[1.4em]">savya.studio</h3>
+        <div class="flex text-[.98em] sm:text-[1.1em] items-center gap-3 sm:gap-5">
           <div class="time text-[#F45E2B]"></div>
-          <div class="flex items-center gap-2">
-            <span class="block w-[.6em] h-[.6em] bg-[#F45E2B] rounded-full"></span>
-            Open to work
+          <div class="flex items-center gap-1 sm:gap-2">
+            <span class="block w-[.55em] h-[.55em] sm:w-[.6em] sm:h-[.6em] bg-[#F45E2B] rounded-full"></span>
+            <span class="hidden xs:inline">Open to work</span>
+            <span class="inline xs:hidden text-xs">Open</span>
           </div>
         </div>
       </nav>
-      <div class="landing h-[200vh]">
-        <div class="w-full h-screen sticky -z-1 top-0 left-0">
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-            <h1 class="heading whitespace-nowrap text-[8em] leading-[1.1em] font-bold">Making. Ideas. <br> Work.
+      <div class="landing h-[200vh] sm:h-[200vh] xs:h-[200vh] flex flex-col justify-between">
+        <!-- Canvas and header content in a sticky container -->
+        <div class="w-full h-screen sticky -z-1 top-0 left-0 flex items-center justify-center">
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-[95vw] max-w-[1100px] px-2 sm:px-0 pointer-events-none">
+            <h1 class="heading whitespace-nowrap text-[2.2em] sm:text-[5em] md:text-[8em] leading-[1.1em] font-bold">
+              Making. Ideas. <br> Work.
               <span class="text-[#F45E2B]">
                 Beautiful
               </span>
             </h1>
-            <h5 class="text-[1.5em] font-[light]">It is time to articulate what frontend development <br> truly
-              encompasses.</h5>
-            <p class="text-[1.9em] para opacity-0 pointer-events-none text-center tracking-tight"
-              style="mix-blend-mode: difference;">
-              Creative development is the process of turning ideas into real designs or experiences. It blends
-              imagination
-              with
-              problem-solving, testing, and refinement to shape concepts into something meaningful, functional, and
-              visually appealing— so people can easily understand, connect with, and use the final outcome.
-            </p>
+            <h5 class="text-[1.06em] sm:text-[1.3em] md:text-[1.5em] font-[light]">
+              It is time to articulate what frontend development
+              <br class="hidden xs:inline sm:inline"> truly encompasses.
+            </h5>
           </div>
-          <canvas class="pointer-events-non" id="canvas"></canvas>
+          <!-- Responsive Canvas, always fills and is behind text -->
+          <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+            <canvas
+              class="pointer-events-none w-full h-full block"
+              id="canvas"
+              style="display:block; width:100vw; height:100vh; max-width:100%; max-height:100%; margin:0; padding:0;"
+            ></canvas>
+          </div>
+        </div>
+        <!-- Paragraph always visible at bottom on both mobile and desktop -->
+        <div class="w-full flex justify-center items-center px-4 pb-8 mt-auto">
+          <p class="text-[1em] sm:text-[1.3em] md:text-[1.9em] para opacity-0 pointer-events-none text-center tracking-tight max-w-[950px]"
+            style="mix-blend-mode: difference;">
+            Creative development is the process of turning ideas into real designs or experiences. It blends
+            imagination
+            with
+            problem-solving, testing, and refinement to shape concepts into something meaningful, functional, and
+            visually appealing— so people can easily understand, connect with, and use the final outcome.
+          </p>
         </div>
       </div>
     </div>
