@@ -23,6 +23,7 @@
     "react-router-dom": "^7.12.0",
     "tailwindcss": "^4.1.18",
     "three": "^0.182.0",
+    "troika-three-text": "^0.52.4",
     "vite-plugin-glsl": "^1.5.5"
   }
 }

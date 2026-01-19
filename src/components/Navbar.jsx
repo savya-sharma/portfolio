@@ -8,6 +8,8 @@ const Navbar = () => {
   const menuLinksRef = useRef([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const barRef = useRef(null);
+
 
   // Initialize menu links to be hidden
   useEffect(() => {
@@ -27,7 +29,7 @@ const Navbar = () => {
       const h = pad(now.getHours());
       const m = pad(now.getMinutes());
       const s = pad(now.getSeconds());
-      const colon = (now.getSeconds() % 2 === 0) ? ':' : ' ';
+      const colon = ':';
       setCurrentTime(`${h} ${colon} ${m} ${colon} ${s}  IST`);
     };
 
@@ -48,7 +50,7 @@ const Navbar = () => {
       gsap.to(menuLinksRef.current, {
         x: 60,
         autoAlpha: 1,
-        duration: 1.2,
+        duration: 1,
         ease: "power4.out",
         stagger: 0.15
       });
@@ -58,10 +60,10 @@ const Navbar = () => {
       gsap.to(menuLinksRef.current, {
         x: 0,
         autoAlpha: 0,
-        duration: 1.2,
+        duration: .8,
         ease: "power4.in",
         stagger: {
-          each: 0.15,
+          each: 0.10,
           from: "end"
         }
       });
@@ -84,6 +86,61 @@ const Navbar = () => {
     }
   };
 
+
+  // bar
+
+  useEffect(() => {
+    if (!barRef?.current) return;
+
+    const moveBar = (offset) => {
+      gsap.to(barRef.current, {
+        y: offset,
+        duration: 1,
+        ease: "power2.out"
+      });
+    };
+
+    const handleMouseDown = () => moveBar(-60);
+    const handleMouseUp = () => moveBar(0);
+
+    const handleWheel = (e) => {
+      if (e.deltaY > 0) {
+        gsap.to(barRef.current, {
+          y: -66,
+          duration: 1,
+          ease: 'black.out'
+        });
+      } else if (e.deltaY < 0) {
+        gsap.to(barRef.current, {
+          y: 0,
+          duration: 1,
+          ease: 'black.out'
+        });
+      }
+    };
+
+
+    const barElem = barRef.current;
+    barElem.addEventListener("mousedown", handleMouseDown);
+    barElem.addEventListener("mouseup", handleMouseUp);
+    barElem.addEventListener("mouseleave", handleMouseUp);
+    barElem.addEventListener("touchstart", handleMouseDown);
+    barElem.addEventListener("touchend", handleMouseUp);
+
+    window.addEventListener("wheel", handleWheel);
+
+    // Cleanup
+    return () => {
+      barElem.removeEventListener("mousedown", handleMouseDown);
+      barElem.removeEventListener("mouseup", handleMouseUp);
+      barElem.removeEventListener("mouseleave", handleMouseUp);
+      barElem.removeEventListener("touchstart", handleMouseDown);
+      barElem.removeEventListener("touchend", handleMouseUp);
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, [barRef]);
+
+
   return (
     <>
       {/* Side Menu Button and Links */}
@@ -95,11 +152,12 @@ const Navbar = () => {
         >
           <h2 className="flex items-center gap-3 pointer-events-none">
             studio
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="#fff"
-              style={{ width: '1em', height: '2em', display: 'inline' }}>
-              <path strokeLinecap="round" strokeLinejoin="round"
-                d="m21 7.5-2.25-1.313M21 7.5v2.25m0-2.25-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3 2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75 2.25-1.313M12 21.75V19.5m0 2.25-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" />
+            <svg xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5 sm:w-5 sm:h-5"
+              fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
             </svg>
+
           </h2>
         </button>
         <nav
@@ -133,7 +191,10 @@ const Navbar = () => {
       </div>
 
       {/* Top Bar */}
-      <nav className="bar fixed z-10 md:flex justify-between items-center top-0 left-0 w-full py-4 px-4 md:px-6 sm:px-13">
+      <nav
+        ref={barRef}
+        className="bar fixed z-10 md:flex justify-between items-center top-0 left-0 w-full py-4 px-4 md:px-6 sm:px-13 bg-white/20 shadow-[0_4px_24px_0_rgba(31,38,135,0.12)] backdrop-blur-md border border-white/30"
+      >
         <h3 className="text-[1.5em] sm:text-[1.4em]">savya.studio</h3>
         <div className="flex text-[.98em] sm:text-[1.1em] items-center gap-3 sm:gap-5">
           <div className="time text-[#F45E2B]">{currentTime}</div>

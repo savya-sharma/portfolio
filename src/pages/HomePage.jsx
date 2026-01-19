@@ -4,8 +4,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Home from '../components/Home';
 import About from '../components/About';
 import Projects from '../components/Projects';
-import Abilities from '../components/Abilities';
+// import Abilities from '../components/Abilities';
 import Footer from '../components/Footer';
+import Abilities from '../components/Abilities';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,6 +47,8 @@ const HomePage = () => {
       <Home />
       <About />
       <Projects />
+      <Abilities />
+
 
       {/* Page 4 - Testimonial */}
       <div className="page4 px-[5vw] pt-41">
@@ -116,7 +119,6 @@ const HomePage = () => {
         </div>
       </div>
 
-      <Abilities />
       <Footer />
     </div>
   );

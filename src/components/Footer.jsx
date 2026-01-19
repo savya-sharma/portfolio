@@ -16,9 +16,9 @@ const Footer = () => {
 
           <div
             className="text-[1em] md:text-[1.1em] sm:text-[1.2em] font-[light] flex flex-col md:flex-row justify-center items-center gap-4 xs:gap-8 mt-6">
-            <a href="#" className="hover:underline">Email</a>
-            <a href="#" className="hover:underline">LinkedIn</a>
-            <a className="text-[#F45E2B] hover:underline" href="#">1.Savya</a>
+            <a href="mailto:savyasharma810@gmail.com?subject=Let's%20Work%20Together" className="hover:underline">Email</a>
+            <a className="hover:underline" href="https://www.linkedin.com/in/savya-sharma-5641072a3/">LinkedIn</a>
+            <a className="text-[#F45E2B] hover:underline" href="https://www.instagram.com/1.savya/">1.Savya</a>
           </div>
         </div>
       </div>

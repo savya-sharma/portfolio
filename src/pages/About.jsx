@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
+import Abilities from '../components/Abilities';
 
 const About = () => {
   return (
@@ -15,7 +17,7 @@ const About = () => {
           className="w-[92vw] sm:w-[88vw] md:w-[70vw] lg:w-[55vw] xl:w-[50%] flex flex-col gap-7 text-[1.07em] sm:text-[1.15em] md:text-[1.2em] font-[light] leading-[1.2em] mx-auto sm:px-4">
           <p>
             <span className="text-[#F45E2B] font-semibold">
-              As a child, I always dreamed of becoming an abstract artist.
+              As a child, I always dreamed of becoming an abstract artist.&nbsp;
             </span>
             It all started in high school, where there were art competitions. I was really into them, especially
             anything related to painting.
@@ -33,7 +35,7 @@ const About = () => {
           <p>
             During my Bachelor's studies, I continued making paintings, though I never had the opportunity to
             sell my work. Alongside development, I also spent time researching trends in web development. Toward
-            the final months of the year, I became curious and decided to join FSL, which reminded me how much I
+            the final months of the year, I became curious and decided to join <a className='text-[#F45E2B]' href="https://fullstacklearning.com" target='_blank'>Full Stack Learning</a>, which reminded me how much I
             enjoy building and creating meaningful things.
           </p>
 
@@ -60,7 +62,7 @@ const About = () => {
             <div className="space-y-3">
               <p>
                 I've always enjoyed learning a wide range of things and improving them—particularly refining
-                ideas that start out roug h or unpolished.
+                ideas that start out rough or unpolished.
               </p>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum facere consequuntur non qui
@@ -87,86 +89,10 @@ const About = () => {
       </div>
 
       {/* Abilities */}
-      <div className="page5 relative w-full font-[light] min-h-screen pt-38 text-white px-4 md:px-24">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-0 relative">
-          <h3 className="text-[1em] text-center sm:text-left mb-8 sm:mb-0">
-            These are the technologies and areas I'm actively <br className="hidden sm:inline" /> exploring and
-            building
-            creative
-            interactions and <br className="hidden sm:inline" /> formated frontend experiences.
-          </h3>
-          <div className="block sm:block absolute md:w-[10vw] w-[16vw] top-41 right-12 md:top-16 md:right-[18%]">
-            <img src="/images/arrow5.png" alt="" className="w-full" />
-          </div>
-          <div
-            className="font-[italic] leading-none text-[3em] md:text-[3.5em] sm:text-[4em] md:text-[5em] text-center sm:text-right">
-            <h2 className="">What i <br className="hidden sm:inline" /> work with</h2>
-          </div>
-        </div>
-
-        <div className="abilities-section pt-12">
-          <div
-            className="border-b border-white/60 py-8 sm:py-13 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-0">
-            <h2 className="text-[2em] sm:text-[2.5em] md:text-[3em] font-[regular] text-center sm:text-left">
-              Three.js
-            </h2>
-            <p className="text-[1em] sm:text-[1.1em] text-center sm:text-right">interactive 3D scenes,<br
-              className="inline sm:hidden" /> <span className="hidden sm:inline">scroll &amp;</span> input-driven
-              motion
-            </p>
-          </div>
-          <div
-            className="border-b border-white/60 py-8 sm:py-13 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-0">
-            <h2 className="text-[2em] sm:text-[2.5em] md:text-[3em] font-[regular] text-center sm:text-left">GLSL
-              Shaders</h2>
-            <p className="text-[1em] sm:text-[1.1em] text-center sm:text-right">custom visual effects,<br
-              className="inline sm:hidden" /> <span className="hidden sm:inline">GPU-based</span> experiments</p>
-          </div>
-          <div className="py-8 sm:py-13 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-0">
-            <h2 className="text-[2em] sm:text-[2.5em] md:text-[3em] font-[regular] text-center sm:text-left">React
-            </h2>
-            <p className="text-[1em] sm:text-[1.1em] text-center sm:text-right">component architecture,<br
-              className="inline sm:hidden" /> <span className="hidden sm:inline">state-driven UI, performance</span>
-            </p>
-          </div>
-
-          <div className="resume flex justify-center items-center pt-10">
-            <a href="https://drive.google.com/file/d/1My02ijYxA1Qj8RxUsRrjZpyCXTp1BCSo/view?usp=drive_link"
-              className="border-none flex items-center gap-3 sm:gap-5 bg-[#F45E2B] text-[1.15em] xs:text-[1.3em] sm:text-[1.5em] py-4 sm:py-5 px-5 sm:px-9 shadow-md transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#F45E2B] active:scale-97">
-              <span className="text-sm sm:text-base">View Resume</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="26" height="26" viewBox="0 0 24 24"
-                strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 sm:w-5 sm:h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
+      <Abilities />
 
       {/* Footer */}
-      <div className="page6 flex flex-col justify-end pb-13 text-white text-center w-full min-h-[72vh] sm:min-h-[95vh]">
-        <div
-          className="flex flex-col items-center justify-between gap-24 sm:gap-38 pt-16 sm:pt-[10vw] md:pt-[7vw] w-full px-4">
-          <p className="font-[light] opacity-[.6] text-[1em] sm:text-[1.1em] leading-tight text-center">
-            I'm a solo frontend developer building interactive,<br className="hidden md:inline" /> creative
-            experiences.<br className="block sm:hidden" /> Let's collaborate on your next project.
-          </p>
-
-          <div className="w-full flex flex-col items-center">
-            <h2
-              className="text-[3em] md:text-[4em] sm:text-[7em] md:text-[10em] leading-none text-center break-words">
-              Open for collaboration.
-            </h2>
-
-            <div
-              className="text-[1em] md:text-[1.1em] sm:text-[1.2em] font-[light] flex flex-col md:flex-row justify-center items-center gap-4 xs:gap-8 mt-6">
-              <a href="#" className="hover:underline">Email</a>
-              <a href="#" className="hover:underline">LinkedIn</a>
-              <a className="text-[#F45E2B] hover:underline" href="#">1.Savya</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 };

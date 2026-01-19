@@ -1,6 +1,6 @@
 const Projects = () => {
   return (
-    <div className="page3 relative w-full min-h-screen pt-32 px-4 md:px-24">
+    <div className="page3 relative w-full min-h-screen pb-32 pt-32 px-4 md:px-24">
       <div className="py-18 relative">
         <div
           className="w-[20vw] sm:w-[8vw] absolute top-7 sm:top-12 left-1/2 sm:left-[24%] -translate-x-1/2 sm:translate-x-0">

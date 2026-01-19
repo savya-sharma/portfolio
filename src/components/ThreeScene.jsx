@@ -21,10 +21,10 @@ const ThreeScene = () => {
     if (!canvasRef.current) return;
 
     // Setup renderer
-    const renderer = new THREE.WebGLRenderer({ 
-      canvas: canvasRef.current, 
-      antialias: true, 
-      alpha: true 
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvasRef.current,
+      antialias: true,
+      alpha: true
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -76,16 +76,16 @@ const ThreeScene = () => {
       z: -1,
       ease: 'power2.inOut',
     }, "a")
-    .to(material.uniforms.uColorChange, {
-      value: 1,
-      ease: 'power2.inOut',
-    }, "a")
-    .to('.landing h1, h5', {
-      opacity: 0,
-    }, "a")
-    .to('.landing p', {
-      opacity: 1,
-    });
+      .to(material.uniforms.uColorChange, {
+        value: 1,
+        ease: 'power2.inOut',
+      }, "a")
+      .to('.landing h1, h5', {
+        opacity: 0,
+      }, "a")
+      .to('.landing p', {
+        opacity: 1,
+      });
 
     // Animation loop
     const animate = () => {

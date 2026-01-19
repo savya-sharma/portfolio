@@ -1,6 +1,6 @@
 const Abilities = () => {
   return (
-    <div className="page5 relative w-full font-[light] min-h-screen pt-38 text-white px-4 md:px-24">
+    <div className="page5 relative w-full font-[light] min-h-screen pt-38 pb-24 text-white px-4 md:px-24">
       <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-0 relative">
         <h3 className="text-[1em] text-center sm:text-left mb-8 sm:mb-0">
           These are the technologies and areas I'm actively <br className="hidden sm:inline" /> exploring and building
@@ -36,7 +36,7 @@ const Abilities = () => {
         </div>
 
         <div className="resume flex justify-center items-center pt-10">
-          <a href="https://drive.google.com/file/d/1My02ijYxA1Qj8RxUsRrjZpyCXTp1BCSo/view?usp=drive_link"
+          <a href="https://drive.google.com/file/d/1psQyUFsAt8FQs3u_3lmpVWeYh7GBvQNG/view?usp=drive_link"
             className="border-none flex items-center gap-3 sm:gap-5 bg-[#F45E2B] text-[1.15em] xs:text-[1.3em] sm:text-[1.5em] py-4 sm:py-5 px-5 sm:px-9 shadow-md transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#F45E2B] active:scale-97">
             <span className="text-sm sm:text-base">View Resume</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="26" height="26" viewBox="0 0 24 24"
