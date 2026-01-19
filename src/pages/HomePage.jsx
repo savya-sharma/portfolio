@@ -13,7 +13,7 @@ const HomePage = () => {
   useEffect(() => {
     // Page4 animation (testimonials section)
     const page4 = document.querySelector(".page4");
-    
+
     if (page4) {
       const pageTimeline = gsap.timeline({
         scrollTrigger: {
