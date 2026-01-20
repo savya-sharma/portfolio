@@ -148,7 +148,7 @@ const Navbar = () => {
         <button
           ref={menuBtnRef}
           onClick={handleMenuToggle}
-          className="menuBtn z-[100] fixed cursor-pointer -left-4 top-[25%] md:top-[45%] -rotate-90 bg-black text-white px-7 sm:px-10 py-2 sm:py-2 text-[1.05em] sm:text-[1.3em] border-none outline-none"
+          className="menuBtn z-[100] fixed cursor-pointer -left-8 top-[25%] md:top-[45%] -rotate-90 bg-black text-white px-7 sm:px-10 py-2 sm:py-2 text-[1.05em] sm:text-[1.3em] border-none outline-none"
         >
           <h2 className="flex items-center gap-3 pointer-events-none">
             studio

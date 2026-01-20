@@ -73,7 +73,7 @@ const Projects = () => {
 
         <div className="flex flex-col sm:flex-row gap-10 sm:gap-14">
           <div className="project w-full sm:w-[35vw] h-[40vh] sm:h-[45vh] bg-black flex-shrink-0">
-            <img className="object-cover w-full h-full" src="../images/projectImg4.jpg" alt="" />
+            <img className="object-cover w-full h-full" src="../images/projectImg4.png" alt="" />
           </div>
           <div className="project_content w-full sm:w-[40vw] flex flex-col gap-2 mt-6 sm:mt-0">
             <h3 className="text-[1.1em] sm:text-[1.2em] opacity-[.8]">2024</h3>
