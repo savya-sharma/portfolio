@@ -193,7 +193,7 @@ const Navbar = () => {
       {/* Top Bar */}
       <nav
         ref={barRef}
-        className="bar fixed z-10 md:flex justify-between items-center top-0 left-0 w-full py-4 px-4 md:px-6 sm:px-13 bg-white/20 shadow-[0_4px_24px_0_rgba(31,38,135,0.12)] backdrop-blur-md border border-white/30"
+        className="bar fixed z-[999] md:flex justify-between items-center top-0 left-0 w-full py-4 px-4 md:px-6 sm:px-13 bg-white/20 shadow-[0_4px_24px_0_rgba(31,38,135,0.12)] backdrop-blur-md border border-white/30"
       >
         <h3 className="text-[1.5em] sm:text-[1.4em]">savya.studio</h3>
         <div className="flex text-[.98em] sm:text-[1.1em] items-center gap-3 sm:gap-5">
