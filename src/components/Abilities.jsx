@@ -19,20 +19,20 @@ const Abilities = () => {
       <div className="abilities-section pt-12">
         <div
           className="border-b border-white/60 py-8 sm:py-13 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-0">
-          <h2 className="text-[2em] sm:text-[2.5em] md:text-[3em] font-[regular] text-center sm:text-left">Three.js</h2>
-          <p className="text-[1em] sm:text-[1.1em] text-center sm:text-right">interactive 3D scenes,<br
-            className="inline sm:hidden" /> <span className="hidden sm:inline">scroll &amp;</span> input-driven motion</p>
+          <h2 className="text-[2em] sm:text-[2.5em] md:text-[3em] font-[regular] text-center sm:text-left">React.js</h2>
+          <p className="text-[1em] sm:text-[1.1em] text-center sm:text-right">Component-Driven UI<br
+            className="inline sm:hidden" /></p>
         </div>
         <div
           className="border-b border-white/60 py-8 sm:py-13 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-0">
-          <h2 className="text-[2em] sm:text-[2.5em] md:text-[3em] font-[regular] text-center sm:text-left">GLSL Shaders</h2>
-          <p className="text-[1em] sm:text-[1.1em] text-center sm:text-right">custom visual effects,<br
-            className="inline sm:hidden" /> <span className="hidden sm:inline">GPU-based</span> experiments</p>
+          <h2 className="text-[2em] sm:text-[2.5em] md:text-[3em] font-[regular] text-center sm:text-left">Next.js</h2>
+          <p className="text-[1em] sm:text-[1.1em] text-center sm:text-right">App Router / SEO,<br
+            className="inline sm:hidden" /></p>
         </div>
         <div className="py-8 sm:py-13 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-0">
-          <h2 className="text-[2em] sm:text-[2.5em] md:text-[3em] font-[regular] text-center sm:text-left">React</h2>
-          <p className="text-[1em] sm:text-[1.1em] text-center sm:text-right">component architecture,<br
-            className="inline sm:hidden" /> <span className="hidden sm:inline">state-driven UI, performance</span></p>
+          <h2 className="text-[2em] sm:text-[2.5em] md:text-[3em] font-[regular] text-center sm:text-left">GSAP</h2>
+          <p className="text-[1em] sm:text-[1.1em] text-center sm:text-right">High-Performance Animations<br
+            className="inline sm:hidden" /></p>
         </div>
 
         <div className="resume flex justify-center items-center pt-10">

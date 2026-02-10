@@ -159,7 +159,7 @@ const Navbar = () => {
             </svg>
 
           </h2>
-        </button> 
+        </button>
         <nav
           className="menu flex flex-col text-[.8em] sm:text-[.85em] text-center gap-1.5 sm:gap-2 text-white fixed top-[22%] md:top-[42%] left-8 sm:left-12 z-[90]"
         >

@@ -1,98 +1,176 @@
+import React, { useRef, useState } from "react";
+
+const projectData = [
+  {
+    img: "../images/projectImg1.png",
+    title: "Zajno",
+    year: "2025",
+    desc: "React, Three, shader, Gsap",
+    src: "https://zajno-eosin.vercel.app/"
+  },
+  {
+    img: "../images/projectImg2.png",
+    title: "Inertia",
+    year: "2025",
+    desc: "Next, Gsap",
+    src: "https://inertia-iota-ashen.vercel.app/"
+  },
+  {
+    img: "../images/projectImg3.png",
+    title: "Cylinder Gallery",
+    year: "2025",
+    desc: "React, Three, shader, Gsap",
+    src: "https://cylinder-gallery.vercel.app/"
+  },
+  {
+    img: "../images/projectImg4.png",
+    title: "Thirtysix Studio",
+    year: "2024",
+    desc: "React, Gsap, locomotive",
+    src: "https://thirtysixstudio-demo.com/"
+  },
+  {
+    img: "../images/projectImg5.png",
+    title: "Ochi",
+    year: "2024",
+    desc: "React, Three, shader, Gsap",
+    src: "https://ochi-six-iota.vercel.app/"
+  },
+  {
+    img: "../images/projectImg6.jpg",
+    title: "Zajno",
+    year: "2025",
+    desc: "React, Three, shader, Gsap",
+    // src: "https://zajno-last-demo.com/"
+  },
+];
+
+import gsap from "gsap";
+
 const Projects = () => {
+  const [overlay, setOverlay] = useState({ visible: false, x: 0, y: 0 });
+  const projectsRef = useRef(null);
+  const overlayRef = useRef(null);
+
+  // Position adjustment for overlay offset from mouse (e.g., so mouse doesn't cover overlay)
+  const overlayOffset = { x: 58, y: 32 };
+
+  const handleMouseMove = (e) => {
+    let boundingRect = projectsRef.current.getBoundingClientRect();
+    setOverlay((prev) => ({
+      ...prev,
+      x: e.clientX - boundingRect.left + overlayOffset.x,
+      y: e.clientY - boundingRect.top + overlayOffset.y,
+    }));
+
+    // Animate overlay movement with gsap if visible
+    if (overlayRef.current) {
+      gsap.to(overlayRef.current, {
+        x: e.clientX - boundingRect.left + overlayOffset.x,
+        y: e.clientY - boundingRect.top + overlayOffset.y,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    }
+  };
+
+  const showOverlay = (e) => {
+    handleMouseMove(e);
+    setOverlay((prev) => ({
+      ...prev,
+      visible: true,
+    }));
+
+    // Animate overlay appearance
+    if (overlayRef.current) {
+      gsap.fromTo(
+        overlayRef.current,
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }
+      );
+    }
+  };
+
+  const hideOverlay = () => {
+    // Animate overlay disappearance
+    if (overlayRef.current) {
+      gsap.to(overlayRef.current, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.85,
+        ease: "power2.out"
+      });
+    }
+    setOverlay((prev) => ({
+      ...prev,
+      visible: false,
+    }));
+  };
+
   return (
     <div className="page3 relative w-full min-h-screen pb-32 pt-32 px-4 md:px-24">
       <div className="py-18 relative">
         <div
-          className="w-[20vw] sm:w-[8vw] absolute top-7 sm:top-12 left-1/2 sm:left-[24%] -translate-x-1/2 sm:translate-x-0">
+          className="w-[20vw] sm:w-[8vw] absolute top-7 sm:top-12 left-1/2 sm:left-[24%] -translate-x-1/2 sm:translate-x-0"
+        >
           <img className="w-full" src="../images/arrow3.png" alt="" />
         </div>
         <div className="absolute -top-7 sm:top-4 left-1/2 sm:left-[10%] -translate-x-1/2 sm:translate-x-0">
           <h1 className="bg-[#262626] px-17 py-2 sm:p-8 text-white text-[1.4em] sm:text-[2em] text-center">
-            Recent <span className="text-[#F45E2B]">
-              Projects
-            </span>
+            Recent <span className="text-[#F45E2B]">Projects</span>
           </h1>
         </div>
         <h1 className="font-[italic] text-center text-[6em] sm:text-[14em]">Projects</h1>
       </div>
-      <div className="projects font-[light] flex flex-col gap-32">
-
-        <div className="flex flex-col sm:flex-row gap-10 sm:gap-14">
-          <div className="project w-full sm:w-[35vw] h-[40vh] sm:h-[45vh] bg-black flex-shrink-0">
-            <img className="object-cover w-full h-full" src="../images/projectImg1.jpg" alt="" />
+      <div
+        className="projects font-[light] grid grid-cols-1 md:grid-cols-3 gap-28 md:gap-12 relative"
+        ref={projectsRef}
+        style={{ minHeight: "400px" }}
+      >
+        {overlay.visible && (
+          <div
+            className="overlay pointer-events-none z-50 absolute bg-orange-500 px-2 rounded-md shadow-lg transition duration-75 select-none"
+            style={{
+              left: overlay.x,
+              top: overlay.y,
+              transform: "translate(-50%, -120%)",
+            }}
+          >
+            visit site
           </div>
-          <div className="project_content w-full sm:w-[40vw] flex flex-col gap-2 mt-6 sm:mt-0">
-            <h3 className="text-[1.1em] sm:text-[1.2em] opacity-[.8]">2024</h3>
-            <h2 className="text-[1.3em] sm:text-[2em]">Sajno.co</h2>
-            <div className="text-[1em] sm:text-[1.2em] opacity-[.8] flex flex-col gap-4 sm:gap-5 pt-5 sm:pt-7">
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eos voluptatum praesentium beatae
-                aperiam
-                hic, nulla similique ipsa nostrum voluptatibus totam repellendus ut magnam tenetur incidunt, dolore,
-                eveniet facere aspernatur.</p>
+        )}
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eveniet accusamus error.</p>
+        {projectData.map((proj, i) => (
+          <a
+            href={proj.src}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project flex flex-col sm:w-[25vw] gap-4 relative"
+            key={i}
+            onMouseEnter={showOverlay}
+            onMouseLeave={hideOverlay}
+            onMouseMove={handleMouseMove}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <div className="border-b pb-2 border-gray-300">
+              <div className="project w-full sm:w-[25vw] h-[40vh] sm:h-[35vh] bg-black flex-shrink-0">
+                <img className="object-cover w-full h-full" src={proj.img} alt="" />
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-10 sm:gap-14">
-          <div className="project w-full sm:w-[35vw] h-[40vh] sm:h-[45vh] bg-black flex-shrink-0">
-            <img className="object-cover w-full h-full" src="../images/projectImg2.jpg" alt="" />
-          </div>
-          <div className="project_content w-full sm:w-[40vw] flex flex-col gap-2 mt-6 sm:mt-0">
-            <h3 className="text-[1.1em] sm:text-[1.2em] opacity-[.8]">2024</h3>
-            <h2 className="text-[1.3em] sm:text-[2em]">Sajno.co</h2>
-            <div className="text-[1em] sm:text-[1.2em] opacity-[.8] flex flex-col gap-4 sm:gap-5 pt-5 sm:pt-7">
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eos voluptatum praesentium beatae
-                aperiam
-                hic, nulla similique ipsa nostrum voluptatibus totam repellendus ut magnam tenetur incidunt, dolore,
-                eveniet facere aspernatur.</p>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eveniet accusamus error.</p>
+            <div className="project_content flex flex-col gap-1">
+              <div className="flex justify-between items-center">
+                <h2 className="text-[1.3rem] sm:text-[1.3rem]">{proj.title}</h2>
+                <h3 className="text-[1.1em] sm:text-[.9rem] opacity-[.8]">{proj.year}</h3>
+              </div>
+              <div className="text-[1em] sm:text-[1rem] opacity-[.8] flex flex-col gap-4">
+                <p>{proj.desc}</p>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-10 sm:gap-14">
-          <div className="project w-full sm:w-[35vw] h-[40vh] sm:h-[45vh] bg-black flex-shrink-0">
-            <img className="object-cover w-full h-full" src="../images/projectImg3.jpg" alt="" />
-          </div>
-          <div className="project_content w-full sm:w-[40vw] flex flex-col gap-2 mt-6 sm:mt-0">
-            <h3 className="text-[1.1em] sm:text-[1.2em] opacity-[.8]">2024</h3>
-            <h2 className="text-[1.3em] sm:text-[2em]">Sajno.co</h2>
-            <div className="text-[1em] sm:text-[1.2em] opacity-[.8] flex flex-col gap-4 sm:gap-5 pt-5 sm:pt-7">
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eos voluptatum praesentium beatae
-                aperiam
-                hic, nulla similique ipsa nostrum voluptatibus totam repellendus ut magnam tenetur incidunt, dolore,
-                eveniet facere aspernatur.</p>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eveniet accusamus error.</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-10 sm:gap-14">
-          <div className="project w-full sm:w-[35vw] h-[40vh] sm:h-[45vh] bg-black flex-shrink-0">
-            <img className="object-cover w-full h-full" src="../images/projectImg4.png" alt="" />
-          </div>
-          <div className="project_content w-full sm:w-[40vw] flex flex-col gap-2 mt-6 sm:mt-0">
-            <h3 className="text-[1.1em] sm:text-[1.2em] opacity-[.8]">2024</h3>
-            <h2 className="text-[1.3em] sm:text-[2em]">Sajno.co</h2>
-            <div className="text-[1em] sm:text-[1.2em] opacity-[.8] flex flex-col gap-4 sm:gap-5 pt-5 sm:pt-7">
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eos voluptatum praesentium beatae
-                aperiam
-                hic, nulla similique ipsa nostrum voluptatibus totam repellendus ut magnam tenetur incidunt, dolore,
-                eveniet facere aspernatur.</p>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eveniet accusamus error.</p>
-            </div>
-          </div>
-        </div>
-
+          </a>
+        ))}
       </div>
     </div>
   );
 };
 
 export default Projects;
-

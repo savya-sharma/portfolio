@@ -5,11 +5,13 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import About from './pages/About';
 import Play from './pages/Play';
+import Menu from './components/Menu';
+import Projects from './components/Projects';
 
 function RootLayout() {
   return (
     <div className="overflow-x-hidden md:overflow-x-visible">
-      <Navbar />
+      <Menu />
       <Outlet />
     </div>
   );
@@ -23,6 +25,7 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: 'about', element: <About /> },
       { path: 'play', element: <Play /> },
+      { path: 'work', element: <Projects /> },
     ],
   },
 ]);

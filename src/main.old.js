@@ -75,3 +75,19 @@
 
 
 
+
+
+
+const projects = document.querySelectorAll('.project');
+const overlay = document.querySelector('.overlay');
+
+
+projects.forEach((project) => {
+    project.addEventListener('mouseover', () => {
+        overlay.style.display = 'block';
+    });
+    project.addEventListener('mouseout', () => {
+        overlay.style.display = 'none';
+    });
+});
+
